@@ -1,5 +1,5 @@
 package Lec0915;
-//3 개 이상의 수의 최대공약수
+// 3개 이상의 수의 최대공약수
 import java.util.Scanner;
 
 public class GCD {
