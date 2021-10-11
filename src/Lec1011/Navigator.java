@@ -10,7 +10,7 @@ public class Navigator {
 
     void monitor() {
         System.out.println("\n--------------네비게이션 화면--------------");
-        System.out.println("목적지까지 도로의 개수 : " + shortest);
+        System.out.print("목적지까지 도로의 개수 : " + shortest);
         System.out.println("\n--------------네비게이션 화면--------------");
     }
 }
