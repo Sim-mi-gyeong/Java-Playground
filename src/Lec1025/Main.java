@@ -15,6 +15,7 @@ public class Main extends JFrame {
         bt.setLocation(100, 100);   // 배치 관리자가 없으므로 직접 위치 지정
         bt.setSize(80,30);
         bt.setBackground(Color.YELLOW);   // 다시
+        bt.setOpaque(true);
         c.add(bt);   // 컨테이너에 올리기
 
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
