@@ -11,13 +11,20 @@ public class ColorGUI extends JFrame {
     }
 
     public ColorGUI() {
+
+        try {   // UIManager 사용
+            UIManager.setLookAndFeel( UIManager.getCrossPlatformLookAndFeelClassName() );
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
         setTitle("10 Colors Button");
 
         Container c = getContentPane();
         c.setLayout(new GridLayout(1, 10) );
 
-        int[][] arrColor = { { 255, 0, 0 }, { 255, 50, 0 }, { 255, 255, 0 }, { 0, 255, 0 },
-                { 0, 0, 255 }, { 0, 5, 255 }, { 100, 0, 255 }, { 102, 102, 102 },
+        int[][] arrColor = { { 255, 0, 0 }, { 255, 100, 0 }, { 255, 255, 0 }, { 0, 255, 0 },
+                { 0, 100, 255 }, { 0, 0, 255 }, { 100, 0, 255 }, { 102, 102, 102 },
                 { 255, 204, 204 }, { 204, 204, 204 } };
 
         Color colorArr;
