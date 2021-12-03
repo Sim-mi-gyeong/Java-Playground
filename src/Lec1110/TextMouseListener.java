@@ -55,8 +55,6 @@ public class TextMouseListener extends JFrame {
 //            }
 //        });
 
-
-
     }
 
     public static void main(String[] args) {
@@ -76,7 +74,8 @@ public class TextMouseListener extends JFrame {
 
         public void keyPressed(KeyEvent e) {
             if (e.getKeyCode() == KeyEvent.VK_ENTER) {
-                label2.setText(tf.getText());
+                JTextField change = (JTextField)e.getSource();
+                label2.setText(change.getText());
 //                label2.setSize(50,20);
 //                label2.setLocation((int)Math.random()*300, (int)Math.random()*300);
 
