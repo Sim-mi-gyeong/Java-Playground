@@ -1,4 +1,4 @@
-package Lec1027;
+package HW1027;
 
 import javax.swing.*;
 import java.awt.*;

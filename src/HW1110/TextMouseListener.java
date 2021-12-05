@@ -1,7 +1,4 @@
-package Lec1110;
-
-import Lec1103.MouseClick;
-import org.w3c.dom.Text;
+package HW1110;
 
 import javax.swing.*;
 import java.awt.*;

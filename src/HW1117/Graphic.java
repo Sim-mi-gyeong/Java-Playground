@@ -1,10 +1,9 @@
-package Lec1117;
+package HW1117;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
 import java.util.Vector;
 
 public class Graphic extends JFrame {

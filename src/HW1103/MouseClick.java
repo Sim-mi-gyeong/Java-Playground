@@ -1,10 +1,9 @@
-package Lec1103;
+package HW1103;
 // 초기에 랜덤한 위치에 있는 라벨의 위치에 해당하는 부분을 클릭했을 때 위치 랜덤으로 변경하도록
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
 
 public class MouseClick extends JFrame {
 

@@ -1,4 +1,4 @@
-package Lec1124;
+package HW1124;
 
 import java.io.*;
 import java.util.ArrayList;

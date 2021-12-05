@@ -1,4 +1,4 @@
-package Lec1201;
+package HW1201;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
