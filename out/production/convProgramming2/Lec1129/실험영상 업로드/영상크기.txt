@@ -1,0 +1,10 @@
+[회색영상]  모두 256x256
+PEPPERS256x256.dat
+COUPLE256x256.dat
+GIRL.dat
+
+
+[컬러영상]
+girl.raw		256x256
+barbara.raw	512x512
+kim.raw		380x380
