@@ -46,7 +46,7 @@ class MemberServiceIntegrationTest {
         Long saveId = memberService.join(member);
 
         // then
-        // 우리가 찾는 게, repository에 있는지 확인 필요
+        // 우리가 찾는 것이, repository 에 있는지 확인 필요
 //        Optional<Member> findMember = memberService.findOne(saveId);   // 메서드 쪽에서 command + Option + v
         Member findMember = memberService.findOne(saveId).get();
         Assertions.assertThat(member.getName()).isEqualTo(findMember.getName());
