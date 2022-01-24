@@ -6,10 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
-import javax.sql.DataSource;
-
 @Configuration
 public class SpringConfig {
     // 뜰 때, MemberService 와 MemberRepository 를 스프링 빈에 등록하고
@@ -24,25 +20,26 @@ public class SpringConfig {
     }
  */
 //    @PersistenceContext
-    private EntityManager em;
+
+    private final MemberRepository memberRepository;
 
     @Autowired
-    public SpringConfig(EntityManager em) {
-        this.em = em;
+    public SpringConfig(MemberRepository memberRepository) {
+        this.memberRepository = memberRepository;
     }
 
     @Bean
     public MemberService memberService() {
-        return new MemberService(memberRepository());   // 오류 -> 생성자 넣어주어야 함
+        return new MemberService(memberRepository);   // 오류 -> 생성자 넣어주어야 함
     }
 
-    @Bean
-    public MemberRepository memberRepository() {
+//    @Bean
+//    public MemberRepository memberRepository() {
 //        return new MemoryMemberRepository();   // MemberRepository 는 인터페이스 MemoryMemberRepository 는 구현체
 //        return new JdbcMemberRepository(dataSource);
 //        return new JdbcTemplateMemberRepository(dataSource);
 //        return new JpaMemberRepository(em);
-        return 
-    }
+//
+//    }
 
 }

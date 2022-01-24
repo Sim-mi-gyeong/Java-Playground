@@ -7,8 +7,6 @@ public class Member {
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)   // DB가 Id를 알아서 생성
     private Long id;   // id는 시스템이 직접 지정
-
-//    @Column(name = "username")
     private String name;
 
     public Long getId() {

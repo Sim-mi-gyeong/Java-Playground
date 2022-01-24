@@ -82,11 +82,11 @@ class MemberServiceTest {
 
         // then
     }
-    @Test
-    void findMembers() {
-    }
-
-    @Test
-    void findOne() {
-    }
+//    @Test
+//    void findMembers() {
+//    }
+//
+//    @Test
+//    void findOne() {
+//    }
 }

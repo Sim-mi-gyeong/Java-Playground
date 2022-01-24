@@ -27,7 +27,6 @@ public class MemoryMemberRepository implements MemberRepository{   // implements
         return store.values().stream()   // 루프를 돌리며 -> member.getName()이 파라미터로 전달된 name과 같은지 확인 -> 같은 경우에만 필터링, 찾으면 반환
                 .filter(member -> member.getName().equals(name))
                 .findAny();
-
     }
 
     @Override

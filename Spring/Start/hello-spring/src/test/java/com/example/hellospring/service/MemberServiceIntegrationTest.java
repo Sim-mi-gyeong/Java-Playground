@@ -12,6 +12,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.transaction.annotation.Transactional;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 @SpringBootTest
@@ -48,8 +49,10 @@ class MemberServiceIntegrationTest {
         // then
         // 우리가 찾는 것이, repository 에 있는지 확인 필요
 //        Optional<Member> findMember = memberService.findOne(saveId);   // 메서드 쪽에서 command + Option + v
-        Member findMember = memberService.findOne(saveId).get();
-        Assertions.assertThat(member.getName()).isEqualTo(findMember.getName());
+//        Member findMember = memberService.findOne(saveId).get();
+//        Assertions.assertThat(member.getName()).isEqualTo(findMember.getName());
+        Member findMember = memberRepository.findById(saveId).get();
+        assertEquals(member.getName(), findMember.getName());
     }
 
     @Test
@@ -63,7 +66,8 @@ class MemberServiceIntegrationTest {
 
         // when
         memberService.join(member1);
-        IllegalStateException e = assertThrows(IllegalStateException.class, () -> memberService.join(member2));
+        IllegalStateException e = assertThrows(IllegalStateException.class,
+                () -> memberService.join(member2));//예외가 발생해야 한다
         assertThat(e.getMessage()).isEqualTo("이미 존재하는 회원입니다.");
 
 /*
