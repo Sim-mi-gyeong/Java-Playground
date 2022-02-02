@@ -1,14 +1,18 @@
 package jpabook.jpashop.domain;
 
 import jpabook.jpashop.domain.item.Item;
+import lombok.AccessLevel;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.aspectj.weaver.ast.Or;
 
 import javax.persistence.*;
 
 @Entity
 @Getter
 @Setter
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class OrderItem {
 
     @Id @GeneratedValue
@@ -26,4 +30,33 @@ public class OrderItem {
     private int orderPrice;  // 주문 가격
 
     private int count;   // 주문 수량
+
+//    protected OrderItem() {   // @NoArgsConstructor(access = AccessLevel.PROTECTED) 로 줄일 수 있음
+//
+//    }
+
+    // == 생성 메서드 == //
+    public static OrderItem createOrderItem(Item item, int orderPrice, int count) {   // Create Order 하기 전 OrderItem 먼저 하고 Order로 넘어감
+        OrderItem orderItem = new OrderItem();
+        orderItem.setItem(item);
+        orderItem.setOrderPrice(orderPrice);
+        orderItem.setCount(count);
+
+        item.removeStock(count);
+        return orderItem;
+    }
+
+    // == 비즈니스 로직 == //
+    public void cancel() {
+        getItem().addStock(count);   // 재고를, 주문수량만큼 다시 늘리기
+    }
+
+    // == 조회 로직 == //
+
+    /**
+     * 주문 상품 전체 가격 조회
+     */
+    public int getTotalPrice() {
+        return getOrderPrice() * getCount();
+    }
 }

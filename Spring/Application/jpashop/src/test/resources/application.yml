@@ -1,0 +1,21 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:test
+    username: sa
+    password:
+    driver-class-name: org.h2.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: create   # 애플리케이션 실행 시점에 엔티티 정보를 보고 테이블을 전체 지우고, 다시 생성
+    properties:
+      hiberanate:
+#        show-sql: true   # hibernate sql 로그를 system.out.println() 으로 출력
+        format_sql: true
+
+# 여기 위에까지 설정이 없어도 스프링부트가 기본적으로 메모리 모드로 테스트 실행을 함(스프링 부트는 기본적으로, ddl-auto: create-drop 으로 동작)
+logging:
+  level:
+    org.hibernate.SQL: debug   # hibernate sql 로그를 디버그 모드로 (log 로)
+    org.hibernate.type: trace
+
