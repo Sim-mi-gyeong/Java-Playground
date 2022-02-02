@@ -1,0 +1,20 @@
+spring:
+  datasource:
+    url: jdbc:h2:tcp://localhost/~/jpashop
+    username: sa
+    password:
+    driver-class-name: org.h2.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: create   # 애플리케이션 실행 시점에 엔티티 정보를 보고 테이블을 전체 지우고, 다시 생성
+    properties:
+      hiberanate:
+#        show-sql: true   # hibernate sql 로그를 system.out.println() 으로 출력
+        format_sql: true
+
+logging:
+  level:
+    org.hibernate.SQL: debug   # hibernate sql 로그를 디버그 모드로 (log 로)
+    org.hibernate.type: trace
+

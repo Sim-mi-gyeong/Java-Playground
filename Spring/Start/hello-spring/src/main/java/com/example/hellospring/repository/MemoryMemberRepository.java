@@ -7,7 +7,7 @@ import java.util.*;
 
 //@Repository
 public class MemoryMemberRepository implements MemberRepository{   // implements 할 때 option + enter
-    private static Map<Long, Member> store = new HashMap<>();   // 동시성 문제 고려
+    private static Map<Long, Member> store = new HashMap<>();   // 동시성 문제 고려 / <키 자료형, 값 자료형>
     private static long sequence = 0L;   // key 값 생성해줌
 
     @Override
