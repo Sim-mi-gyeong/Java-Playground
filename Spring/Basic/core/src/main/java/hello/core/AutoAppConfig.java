@@ -14,9 +14,10 @@ import org.springframework.context.annotation.FilterType;
         excludeFilters = @ComponentScan.Filter(type = FilterType.ANNOTATION, classes = Configuration.class)   // 컴포넌트 스캔을 통해 자동으로 스프링 빈 등록에서 제외할 것을 지정
 )
 public class AutoAppConfig {
-
-    @Bean(name = "memoryMemberRepository")
+/*
+    @Bean
     public MemberRepository memberRepository() {
         return new MemoryMemberRepository();
     }
+ */
 }
