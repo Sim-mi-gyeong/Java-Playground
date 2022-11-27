@@ -1,5 +1,12 @@
 package hello.core.lifecycle;
 
+import org.springframework.beans.factory.DisposableBean;
+import org.springframework.beans.factory.InitializingBean;
+
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+
+// 외부 네트워크에 미리 연결하는 객체 생성을 위한 클래스
 public class NetworkClient {
 
     private String url;
@@ -26,5 +33,18 @@ public class NetworkClient {
     // 서비스 종료 시 호출
     public void disconnect() {
         System.out.println("closed " + url);
+    }
+
+    @PostConstruct
+    public void init() {
+        System.out.println("NetworkClient.init");
+        connect();
+        call("초기화 연결 메세지");
+    }
+
+    @PreDestroy
+    public void close() {
+        System.out.println("NetworkClient.close");
+        disconnect();
     }
 }
