@@ -19,7 +19,6 @@ public class MemberListServlet extends HttpServlet {
 
     @Override
     protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        super.service(request, response);
 
         List<Member> members = memberRepository.findAll();
 

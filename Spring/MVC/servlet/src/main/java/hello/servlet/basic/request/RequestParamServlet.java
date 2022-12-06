@@ -18,7 +18,6 @@ import java.util.Enumeration;
 public class RequestParamServlet extends HttpServlet {
     @Override
     protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        super.service(request, response);
 
         System.out.println("[전체 파라미터 조회] - start");
 //        Enumeration<String> parameterNames = request.getParameterNames();

@@ -12,8 +12,6 @@ public class HelloServlet extends HttpServlet {   // control + o
 
     @Override
     protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        super.service(request, response);
-
         System.out.println("request = " + request);
         System.out.println("response = " + response);
         System.out.println("HelloServlet.service");

@@ -15,7 +15,6 @@ import java.nio.charset.StandardCharsets;
 public class RequestBodyStringServlet extends HttpServlet {
     @Override
     protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        super.service(request, response);
         // Message Body 내용을 바이트로 바로 받음
         ServletInputStream inputStream = request.getInputStream();
         // 바이트를 -> String 으로 변환 : StreamUtils
